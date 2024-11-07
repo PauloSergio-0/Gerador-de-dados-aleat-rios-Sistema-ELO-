@@ -113,7 +113,7 @@ with open('dados_eleitorais_aleatorios.csv', mode='w', newline='', encoding='utf
     writer = csv.writer(file)
     writer.writerow(["Zona Eleitoral", "Município_zona", "Municipio", "Período (Data)", "Tipo de RAE", "Final de Prazo", "Título Net", "Situação do RAE","Situação de Requerimento", "Biometria", "Tipos de Pendência Biometrica", "Tipo de Biometria que está Pendente"])
     
-    for _ in range(100000):  # Ajuste o número de entradas desejado
+    for _ in range(1000):  # Ajuste o número de entradas desejado
         zona = random.choice(list(zonas_municipios.keys()))  # Selecionar uma zona eleitoral aleatoriamente
         municipio = zonas_municipios[zona]
         municipio_loc = loc_municipios[zona]
@@ -316,23 +316,7 @@ def gerar_registros_por_municipio():
                             "GÊMEO ENVOLVIDO EM DUPLICIDADE/PLURALIDADE INDEFERIDO",
                             "PAGAMENTO DE MULTA PENDENTE REJEITADO"
                         ])
-                        requerimento = random.choice([
-                    "AGUARDANDO ANÁLISE",
-                    "EXCLUÍDO",
-                    "EM PROCESSAMENTO",
-                    "EXCLUÍDO POR DECURSO DE PRAZO LEGAL COM PENDÊNCIA",
-                    "PENDENTE DE DOCUMENTOS",
-                    "EM ANÁLISE",
-                    "EM PROCESSAMENTO COM PENDÊNCIA",
-                    "FINALIZADO COM SUCESSO",
-                    "ARQUIVOS DELETADOS",
-                    "FINALIZADO COM INSUCESSO (DECISÃO DA AUTORIDADE JUDICIÁRIA)",
-                    "FINALIZADO COM INSUCESSO (IDENTIFICADO ERROS)",
-                    "FINALIZADO COM INSUCESSO (INVIABILIZADO DE SER SUBMETIDO AO PROCESSAMENTO)",
-                    "FINALIZADO COM INSUCESSO (INDEFERIDO APÓS DILIGÊNCIA)",
-                    "FINALIZADO COM INSUCESSO (RECUSADO AUTOMATICAMENTE PELO SISTEMA)",
-                    "FINALIZADO COM INSUCESSO (PERÍODO DE SOLICITAÇÃO INVÁLIDO)",
-                    "PENDENTE DE COLETA BIOMÉTRICA"])
+
                     elif net == "Atendimento presencial":
                         situacao = random.choice([    "Com Banco de Erros",
                                                     "Em Coincidência",
@@ -379,3 +363,6 @@ gerar_registros_por_municipio()
 
 print("Novos registros adicionados com sucesso.")
 print("Novos registros adicionados com sucesso.asd")
+
+
+
